@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>GreenMark - Input</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body style="background:#F7FAF7; color:#1C2B1C;">
+
+  <nav class="navbar" style="background:#2C5F2D;">
+    <div class="logo">🌿 GreenMark</div>
+    <button onclick="window.location.href='index.html'" 
+            class="btn-outline">← Back</button>
+  </nav>
+
+  <div class="form-container">
+    <h2>Daily Data Input</h2>
+    <p>2 minutes mein apna carbon footprint jaano</p>
+
+    <!-- ELECTRICITY -->
+    <div class="form-section">
+      <h3>⚡ Electricity</h3>
+      <div class="form-group">
+        <label>Units used today (kWh)</label>
+        <input type="number" id="electricity" 
+               placeholder="e.g. 45" value="45">
+      </div>
+      <div class="form-group">
+        <label>Generator hours</label>
+        <input type="number" id="generator" 
+               placeholder="e.g. 2" value="2">
+      </div>
+    </div>
+
+    <!-- DELIVERY -->
+    <div class="form-section">
+      <h3>🚚 Delivery</h3>
+      <div class="form-group">
+        <label>Total km today</label>
+        <input type="number" id="delivery" 
+               placeholder="e.g. 80" value="80">
+      </div>
+      <div class="form-group">
+        <label>Vehicle type</label>
+        <select id="vehicle">
+          <option value="0.10">2-Wheeler Petrol</option>
+          <option value="0.21" selected>3-Wheeler CNG</option>
+          <option value="0.27">4-Wheeler Diesel</option>
+          <option value="0.05">Electric Vehicle</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- PACKAGING -->
+    <div class="form-section">
+      <h3>📦 Packaging</h3>
+      <div class="form-group">
+        <label>Packaging used (kg)</label>
+        <input type="number" id="packaging" 
+               placeholder="e.g. 5" value="5">
+      </div>
+    </div>
+
+    <button class="btn-primary" 
+            style="width:100%; padding:16px; font-size:16px;"
+            onclick="saveAndCalculate()">
+      Calculate My Carbon Footprint →
+    </button>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

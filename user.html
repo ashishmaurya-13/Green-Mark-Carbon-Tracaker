@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>GreenMark User</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body style="background:#F7FAF7;">
+
+<div class="cert-page-container">
+
+<h2>Enter Business Name</h2>
+
+<input 
+id="businessName"
+type="text"
+placeholder="Enter your shop/business name"
+style="padding:12px;width:300px;">
+
+<br><br>
+
+<button class="btn-primary" onclick="saveUser()">
+Continue
+</button>
+
+</div>
+
+
+<script>
+
+function saveUser(){
+
+ let name = document.getElementById("businessName").value;
+
+ if(name.trim()==""){
+   alert("Enter name");
+   return;
+ }
+
+ localStorage.setItem("greenmarkUser", name);
+
+ window.location.href="certificate.html";
+
+}
+
+</script>
+
+</body>
+</html>

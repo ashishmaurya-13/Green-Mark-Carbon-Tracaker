@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <div style="text-align:center; margin:20px;">
+  <input 
+    id="userNameInput"
+    placeholder="Enter Business Name"
+    style="padding:12px; width:250px;"
+  >
+
+  <button class="btn-primary" onclick="setName()">
+    Save Name
+  </button>
+</div>
+  <meta charset="UTF-8">
+  <title>GreenMark - Certificate</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- html2canvas — screenshot lene ke liye -->
+  <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+</head>
+<body style="background:#F7FAF7; color:#1C2B1C;">
+
+  <nav class="navbar" style="background:#1A2E1A;">
+    <div class="logo">🌿 GreenMark</div>
+    <div style="display:flex; gap:10px;">
+      <button onclick="window.location.href='dashboard.html'"
+              class="btn-outline">← Dashboard</button>
+      <button onclick="window.location.href='index.html'"
+              class="btn-outline">🏠 Home</button>
+    </div>
+  </nav>
+
+  <div class="cert-page-container">
+
+    <div class="cert-actions-top">
+      <h2 style="color:#2C5F2D;">🏅 Your GreenScore™ Certificate</h2>
+      <p style="color:#5A7A5A; margin-top:6px;">
+        Download karke shopfront, website aur social media pe lagao!
+      </p>
+      <div style="display:flex; gap:12px; margin-top:16px; flex-wrap:wrap;">
+        <button class="btn-primary" onclick="downloadCertificate()">
+          ⬇ Download Certificate
+        </button>
+        <button class="btn-outline-green" onclick="window.location.href='input.html'">
+          🔄 Recalculate
+        </button>
+      </div>
+    </div>
+
+    <!-- YEH CERTIFICATE DOWNLOAD HOGA -->
+    <div id="certificate-card" class="certificate-card">
+
+      <!-- Header -->
+      <div class="cert-header">
+        <div class="cert-logo">🌿 GreenMark</div>
+        <div class="cert-tagline">CARBON INTELLIGENCE PLATFORM</div>
+      </div>
+
+      <!-- Body -->
+      <div class="cert-body-inner">
+
+        <div class="cert-certifies-text">This certifies that</div>
+        <div style="text-align:center;margin:20px;">
+
+<input 
+id="userNameInput"
+placeholder="Enter Business Name"
+style="padding:12px;width:250px;">
+
+<button 
+class="btn-primary"
+onclick="setName()">
+
+Save Name
+
+</button>
+
+</div>
+
+        <div class="cert-business-name" id="cert-business">
+         
+        </div>
+
+        <!-- Score Circle -->
+        <div class="cert-score-section">
+          <div class="cert-score-circle" id="cert-circle">
+            <span id="cert-score-num">--</span>
+          </div>
+          <div class="cert-score-details">
+            <div class="cert-score-title">GreenScore™</div>
+            <div class="cert-score-grade" id="cert-grade">
+              Calculating...
+            </div>
+            <div class="cert-score-rank" id="cert-rank"></div>
+          </div>
+        </div>
+
+        <div class="cert-desc">
+          has demonstrated commitment to environmental responsibility
+          by actively tracking and reducing carbon footprint through
+          the GreenMark platform.
+        </div>
+
+        <div class="cert-divider"></div>
+
+        <!-- Details Grid -->
+        <div class="cert-details-grid">
+          <div class="cert-detail-item">
+            <div class="cert-detail-label">Total CO2 Today</div>
+            <div class="cert-detail-val" id="cert-co2">-- kg</div>
+          </div>
+          <div class="cert-detail-item">
+            <div class="cert-detail-label">Valid Period</div>
+            <div class="cert-detail-val" id="cert-validity">2026</div>
+          </div>
+          <div class="cert-detail-item">
+            <div class="cert-detail-label">Certificate ID</div>
+            <div class="cert-detail-val" id="cert-id">GM-2026-XXX</div>
+          </div>
+          <div class="cert-detail-item">
+            <div class="cert-detail-label">Issued On</div>
+            <div class="cert-detail-val" id="cert-date">--</div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Footer -->
+      <div class="cert-footer">
+        <div class="cert-footer-left">
+          Verified by GreenMark Platform
+        </div>
+        <div class="cert-footer-right">
+          🌿 GreenMark Verified
+        </div>
+      </div>
+
+    </div>
+    <!-- certificate-card ends -->
+
+  </div>
+
+  <script src="app.js"></script>
+  <script>
+    loadCertificate();
+  </script>
+  <script>
+
+let name = localStorage.getItem("greenmarkUser");
+
+if(name){
+ document.getElementById("cert-business").innerText = name;
+}
+
+loadCertificate();
+
+</script>
+
+</body>
+</html>

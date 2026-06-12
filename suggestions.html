@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>GreenMark - Suggestions</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body style="background:#F7FAF7; color:#1C2B1C;">
+
+  <nav class="navbar" style="background:#3D7A3E;">
+    <div class="logo">🌿 GreenMark</div>
+    <div style="display:flex; gap:10px;">
+      <button onclick="window.location.href='certificate.html'" 
+              class="btn-primary">🏅 Get Certificate</button>
+      <button onclick="window.location.href='dashboard.html'" 
+              class="btn-outline">← Dashboard</button>
+    </div>
+  </nav>
+
+  <!-- HEADER -->
+  <div class="sugg-header">
+    <h2>💡 AI Suggestions</h2>
+    <p>Tumhare data ke hisaab se personalized tips</p>
+    <!-- Summary bar -->
+    <div class="sugg-summary">
+      <div class="summary-item">
+        <span id="potential-saving">Calculating...</span>
+        <small>Monthly Savings Possible</small>
+      </div>
+      <div class="summary-item">
+        <span id="co2-reduction">Calculating...</span>
+        <small>CO2 Reduce Ho Sakta Hai</small>
+      </div>
+      <div class="summary-item">
+        <span id="tips-count">0</span>
+        <small>Action Items</small>
+      </div>
+    </div>
+  </div>
+
+  <!-- TIPS CONTAINER — JS yahan inject karega -->
+  <div class="sugg-body">
+    <div id="tips-container">
+      <p style="text-align:center; color:#5A7A5A;">
+        Loading suggestions...
+      </p>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+  <script>
+    loadSuggestions();
+  </script>
+
+</body>
+</html>

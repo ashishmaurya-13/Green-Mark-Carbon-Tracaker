@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>GreenMark - Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Chart.js library — free, CDN se aata hai -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body style="background:#F7FAF7; color:#1C2B1C;">
+
+  <nav class="navbar" style="background:#228424;">
+    <div class="logo">🌿 GreenMark</div>
+    <div style="display:flex; gap: 20px;">
+      <button onclick="window.location.href='suggestions.html'" 
+              class="btn-primary">💡 Suggestions</button>
+      <button onclick="window.location.href='input.html'" 
+              class="btn-outline">← Re-calculate</button>
+    </div>
+  </nav>
+
+  <div class="dashboard-container">
+
+    <!-- TOP ROW — Score + Stats -->
+    <div class="dash-top-row">
+
+      <!-- GREEN SCORE CARD -->
+      <div class="score-card">
+        <p class="score-label">Your GreenScore™</p>
+        <div class="score-ring" id="score-ring">
+          <span id="green-score">--</span>
+        </div>
+        <p class="score-grade" id="score-grade">Calculating...</p>
+        <p class="score-compare" id="score-compare"></p>
+      </div>
+
+      <!-- STATS GRID -->
+      <div class="stats-grid">
+        <div class="stat-box">
+          <div class="stat-icon">⚡</div>
+          <div class="stat-val" id="elec-co2">-- kg</div>
+          <div class="stat-lbl">Electricity CO2</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-icon">🚚</div>
+          <div class="stat-val" id="delivery-co2">-- kg</div>
+          <div class="stat-lbl">Delivery CO2</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-icon">📦</div>
+          <div class="stat-val" id="pack-co2">-- kg</div>
+          <div class="stat-lbl">Packaging CO2</div>
+        </div>
+        <div class="stat-box highlight">
+          <div class="stat-icon">🌿</div>
+          <div class="stat-val" id="total-co2">-- kg</div>
+          <div class="stat-lbl">Total CO2 Today</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- BOTTOM ROW — Chart + Breakdown -->
+    <div class="dash-bottom-row">
+
+      <!-- BAR CHART -->
+      <div class="chart-card">
+        <h3>Weekly CO2 Trend (kg)</h3>
+        <canvas id="weeklyChart" height="160"></canvas>
+      </div>
+
+      <!-- BREAKDOWN BARS -->
+      <div class="breakdown-card">
+        <h3>Emission Sources</h3>
+
+        <div class="breakdown-row">
+          <span class="b-icon">⚡</span>
+          <div class="b-info">
+            <div class="b-name">Electricity</div>
+            <div class="b-bar-wrap">
+              <div class="b-bar" id="bar-elec" style="width:0%"></div>
+            </div>
+          </div>
+          <span class="b-val" id="bval-elec">0 kg</span>
+        </div>
+
+        <div class="breakdown-row">
+          <span class="b-icon">🚚</span>
+          <div class="b-info">
+            <div class="b-name">Delivery</div>
+            <div class="b-bar-wrap">
+              <div class="b-bar" id="bar-del" style="width:0%"></div>
+            </div>
+          </div>
+          <span class="b-val" id="bval-del">0 kg</span>
+        </div>
+
+        <div class="breakdown-row">
+          <span class="b-icon">📦</span>
+          <div class="b-info">
+            <div class="b-name">Packaging</div>
+            <div class="b-bar-wrap">
+              <div class="b-bar" id="bar-pack" style="width:0%"></div>
+            </div>
+          </div>
+          <span class="b-val" id="bval-pack">0 kg</span>
+        </div>
+
+        <button class="btn-primary" 
+                style="width:100%; margin-top:20px;"
+                onclick="window.location.href='suggestions.html'">
+          View AI Suggestions →
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+  <script>
+    // Yeh page load hote hi chalega
+    loadDashboard();
+  </script>
+
+</body>
+</html>
