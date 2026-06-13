@@ -285,7 +285,8 @@ function loadCertificate() {
 
   }
 
-
+document.getElementById("user-name").innerText =
+localStorage.getItem("greenmarkUser");
 
   // DATA LOAD
 
