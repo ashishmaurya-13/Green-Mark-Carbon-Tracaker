@@ -503,3 +503,18 @@ function downloadCertificate(){
 
 
 }
+async function getAIResponse() {
+  const input = document.getElementById("userInput").value;
+
+  const res = await fetch("http://localhost:5000/analyze", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({ text: input })
+  });
+
+  const data = await res.json();
+
+  document.getElementById("result").innerText = data.result;
+}console.log("PAGE LOADED");

@@ -38,3 +38,5 @@ function loginUser() {
 
   window.location.href = "input.html";
 }
+localStorage.setItem("user", "Ashish");
+console.log("PAGE LOADED");
